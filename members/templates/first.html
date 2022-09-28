@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>All Members</h1>
+<table border="1">
+{% for x in members %}
+    <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+        <td>{{ x.lastname }}</td>
+        <td><a href="delete/{{ x.id }}">delete</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+<ul>
+    
+    {% for x in members %}
+        <li style="background-color:{% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' %}">
+            {{ x.firstname }}
+        </li>
+    {% endfor %}
+        
+</ul>
+
+<p>
+    <a href="add-member/">Add Member</a>
+</p>
+
+</body>
+</html>
